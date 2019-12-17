@@ -675,6 +675,7 @@ abstract class ".$this->getUnqualifiedClassName().$parentClass." implements Acti
                 $hooks[$hook.$action] = false === strpos($script, "function $hook.$action(");
             }
         }
+        $hooks['hasBaseClass'] = null !== $this->getBehaviorContent('parentClass') || null !== ClassTools::classname($this->getBaseClass());
         $script .= $this->renderTemplate('baseObjectMethodHook', $hooks);
     }
 
