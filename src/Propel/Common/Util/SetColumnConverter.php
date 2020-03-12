@@ -44,8 +44,8 @@ class SetColumnConverter
             }
             $bitValueArr[array_search($value, $valueSet)] = '1';
         }
-        
-        return base_convert(implode(array_reverse($bitValueArr)), 2, 10);
+
+        return base_convert(implode('', array_reverse($bitValueArr)), 2, 10);
     }
 
     /**
